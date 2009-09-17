@@ -15,4 +15,6 @@ $java -Djavax.net.ssl.keyStore=SCH_SSL_RSA_Cert -Djavax.net.ssl.keyStorePassword
 Issues so far:
 1.The debian java config was all messed up, fixed this by runnning "update-alternatives --all" and setting all of the java things to sun-java-6 (no more java-gcj) then generated a new ssl key (sun keytool)
 
-credit: http://stilius.net/java/java_ssl.php
+credit: 
+http://stilius.net/java/java_ssl.php
+http://java.sun.com/docs/books/tutorial/networking/sockets/clientServer.html
