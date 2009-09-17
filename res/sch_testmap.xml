@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<job id='0' >
+	<name>root_job</name>
+	<status>hold</status>
+	<position>
+		<x>0</x>
+		<y>0</y>
+		<z>0</z>
+	</position>
+	<parents></parents>
+	<children>
+		<child>1</child>
+	</children>
+</job>
+<job id='1'>
+	<name>brunch_A</name>
+	<status>fail</status>
+	<position>
+		<x>-1</x>
+		<y>-1</y>
+		<z>0</z>
+	</position>
+	<parents>
+		<parent>0</parent>
+	</parents>
+	<children></children>
+</job>

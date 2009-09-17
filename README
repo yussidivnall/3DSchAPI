@@ -1,0 +1,18 @@
+A Schedualer monitoring tool for mobile devices. composed of a server and a client sides. 
+Note that this has never been intended to be used in a production enviornment, it was written for my personal chalenge, if you want to run this do so at your own risk, if you make a load of money of of this product would be really nice to have some too
+
+to run server side
+
+$cd src/serverside/
+#Create ssl certificate
+$keytool -genkey -keystore SCH_SSL_RSA_Cert -keyalg RSA
+$javac SchServerMain.java
+#as root: don't forget to change 123456 to whatever password you've given keytool
+$java -Djavax.net.ssl.keyStore=SCH_SSL_RSA_Cert -Djavax.net.ssl.keyStorePassword=123456 SchServerMain -Djava.protocol.handler.pkgs=com.sun.net.ssl.internal.www.protocol -Djavax.net.debug=ssl
+
+
+
+Issues so far:
+1.The debian java config was all messed up, fixed this by runnning "update-alternatives --all" and setting all of the java things to sun-java-6 (no more java-gcj) then generated a new ssl key (sun keytool)
+
+credit: http://stilius.net/java/java_ssl.php
