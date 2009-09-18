@@ -19,6 +19,9 @@ public class SchProtocolHandler {
 			pout = new PrintWriter(socket.getOutputStream(),true);
 			
 			String line = null;
+			
+			pout.println("Welcome client!");
+			pout.println("Prepare to be bored!");
 			System.out.println("Waiting for client input now...");
 			while((line=br.readLine())!=null && !done ){
 				System.out.println(line);

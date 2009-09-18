@@ -17,7 +17,7 @@ Client: fix up the SchSimpleTerminal for testing the server...
 Server: add dump map to dump whole xml
 Server: add some config
 Server: add dumpjobs to dump particular parts of XML
-Server: add some notification system to update all clients when XML changes (using dumpjobs)
+Server: add some notification system to update all clients when XML changes
 Client: to start writing client!
 
 Issues so far:
@@ -26,4 +26,3 @@ Issues so far:
 credit: 
 http://stilius.net/java/java_ssl.php
 http://java.sun.com/docs/books/tutorial/networking/sockets/clientServer.html
-http://www.j2ee.me/j2se/1.4.2/docs/api/java/lang/Thread.html
