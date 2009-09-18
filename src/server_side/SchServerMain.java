@@ -31,8 +31,9 @@ public class SchServerMain {
 		while (!done){
 			System.out.println("Waiting for new client...");
 			socket = (SSLSocket) serverSocket.accept();
+			System.out.println("client:"+socket.getInetAddress()+" is connected");
 			SchConnectionThread connThread = new SchConnectionThread((SSLSocket)socket);
-			connThread.run();
+			connThread.start();
 			System.out.println("New client accepted:");
 		}
 	}

@@ -2,7 +2,7 @@ import java.net.*;
 import javax.net.*;
 import javax.net.ssl.*;
 
-public class SchConnectionThread implements Runnable {
+public class SchConnectionThread extends Thread{
 	SSLSocket socket;
 	SchConnectionThread(SSLSocket sock){
 		socket=sock;

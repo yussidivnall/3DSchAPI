@@ -3,9 +3,11 @@ import java.io.*;
 
 public class SchProtocolHandler {
 	SSLSocket socket;
-	boolean done = false;
 	PrintWriter pout;
 	
+	boolean done = false;
+	String XML_PATH="/home/volcan/Desktop/development/3DSchAPI/sch_testmap.xml";
+		
 	SchProtocolHandler(SSLSocket sock){ 
 		System.out.println("Protocol handler CONSTRUCTOR");
 		socket=sock;
@@ -44,14 +46,21 @@ public class SchProtocolHandler {
 	public void dumpAll(){
 		System.out.println("Dumping all map");
 		try{
-			
-			pout.println("GAGAGAGAG");
-			pout.println("GAGAGAGAG");
-			pout.println("GAGAGAGAG");
-			//pout.close();
-		}catch(Exception ioe){ioe.printStackTrace();}
+			dumpFile();
+		}catch(IOException ioe){
+			ioe.printStackTrace();
+		}
 	}
 	public void dumpJobs(String request){
 		System.out.println("Dumping requested jobs:"+request);
 	}
+
+	public void dumpFile() throws IOException{
+		BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(XML_PATH)));
+		String s;
+		while((s=br.readLine())!=null){
+			pout.println(s);
+		}
+	}
+
 }
